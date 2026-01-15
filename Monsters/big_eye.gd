@@ -36,7 +36,3 @@ func _on_vision_area_2d_body_exited(body: Node2D) -> void:
 func _on_hit_area_2d_2_body_entered(body: Node2D) -> void:
 	set_process(false)
 	monster_hit.emit()
-	await get_tree().create_timer(0.5).timeout.connect(_finish_attack)
-
-func _finish_attack():
-	set_process(true)
